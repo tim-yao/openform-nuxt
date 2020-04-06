@@ -174,13 +174,13 @@ const openformLoader = () => {
   SeamlessOpenForms.loadOpenForms()
 
   // TODO: (Tim) below throws error, need investigation. It cause scroll not working.
-  // if (typeof (window.postMessage) !== 'undefined') {
-  //   if (typeof (window.addEventListener) !== 'undefined') {
-  //     window.addEventListener('message', SeamlessOpenForms.scrollToTopEvent, false)
-  //   } else {
-  //     window.attachEvent('onmessage', SeamlessOpenForms.scrollToTopEvent)
-  //   }
-  // }
+  if (typeof (window.postMessage) !== 'undefined') {
+    if (typeof (window.addEventListener) !== 'undefined') {
+      window.addEventListener('message', SeamlessOpenForms.scrollToTopEvent, false)
+    } else {
+      window.attachEvent('onmessage', SeamlessOpenForms.scrollToTopEvent)
+    }
+  }
 }
 
 export default openformLoader
