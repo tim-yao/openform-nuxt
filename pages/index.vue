@@ -24,16 +24,21 @@
           GitHub
         </a>
       </div>
+      <client-only>
+        <openform formId="a22c19f5-f63f-48ec-b0bc-39fc37ae4384"></openform>
+      </client-only>
     </div>
   </div>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
+import Openform from '~/components/Openform.vue'
 
 export default {
   components: {
-    Logo
+    Logo,
+    Openform
   }
 }
 </script>
