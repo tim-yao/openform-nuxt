@@ -7,18 +7,11 @@
 <script>
 // This component need to be used as `client-only` mode.
 // Otherwise will got Nuxt error for not match server side rendering.
-import openformLoader from './openform-loader'
+
 export default {
   name: 'Openform',
   props: {
     formId: { default: null, type: String }
-  },
-  head () {
-    return {
-      script: [
-        { src: '/js/embed-iframe.js', defer: true, body: true }
-      ]
-    }
   },
   computed: {
     formLink: function () {
@@ -26,8 +19,9 @@ export default {
     }
   },
   mounted: function () {
-    // Call the form loader only after this client side component mounted.
-    openformLoader()
+    let openFormsEmbedScript = document.createElement('script')
+     openFormsEmbedScript.setAttribute('src', 'https://au.openforms.com/Scripts/embed-iframe.js?immediate=true')
+     document.head.appendChild(openFormsEmbedScript)
   }
 }
 </script>
