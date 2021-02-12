@@ -16,24 +16,24 @@
         >
           Documentation
         </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
       </div>
+      <di class="form-test">
+        <client-only>
+          <openform formId="a22c19f5-f63f-48ec-b0bc-39fc37ae4384"></openform>
+        </client-only>
+      </di>
     </div>
   </div>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
+import Openform from '~/components/Openform.vue'
 
 export default {
   components: {
-    Logo
+    Logo,
+    Openform
   }
 }
 </script>
@@ -68,5 +68,9 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+
+.form-test {
+  margin-top: 30px;
 }
 </style>
